@@ -6,7 +6,7 @@ import { VideoPlayer } from './VideoPlayer';
 
 export function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  
+
   /**
    * 视频文件路径 - 视频文件放在 public 目录，使用绝对路径
    * public 目录下的文件会被直接复制到构建输出目录的根目录

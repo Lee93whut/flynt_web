@@ -101,24 +101,24 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
-              <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full flex items-center gap-2 hover:shadow-lg hover:shadow-amber-500/50 transition-all group"
+              <motion.div
+                className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full flex items-center gap-4 hover:shadow-lg hover:shadow-amber-500/50 transition-all group overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="font-medium text-slate-950">Explore Our Vehicles</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-slate-950" />
-              </motion.button>
-
-              <motion.button
-                className="px-8 py-4 border border-amber-500/50 rounded-full flex items-center gap-2 hover:bg-amber-500/10 transition-all group"
-                whileHover={{ scale: 1.05, borderColor: 'rgba(251, 191, 36, 0.8)' }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsVideoOpen(true)}
-              >
-                <Play className="w-5 h-5 text-amber-400" />
-                <span>Watch Video</span>
-              </motion.button>
+                <button className="flex items-center gap-2">
+                  <span className="font-medium text-slate-950">Explore Our Vehicles</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-slate-950" />
+                </button>
+                <div className="h-6 w-px bg-slate-950/30"></div>
+                <button
+                  className="flex items-center gap-2"
+                  onClick={() => setIsVideoOpen(true)}
+                >
+                  <Play className="w-5 h-5 text-slate-950" />
+                  <span className="font-medium text-slate-950">Watch Video</span>
+                </button>
+              </motion.div>
             </motion.div>
 
             {/* Key stats */}

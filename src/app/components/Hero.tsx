@@ -3,8 +3,8 @@ import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
 import heroImage from 'figma:asset/5159f5d6ea0c335cd8bc69a563e78a9a97ff29ee.png';
 import { VideoPlayer } from './VideoPlayer';
-// 导入视频文件 - 请将您的 MP4 视频文件放在 src/assets/ 目录下，然后修改这里的路径
-import videoFile from '../assets/video.mp4';
+// 导入视频文件 - 使用 ?url 后缀让 Vite 正确处理视频文件
+import videoFile from '../assets/video.mp4?url';
 
 export function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);

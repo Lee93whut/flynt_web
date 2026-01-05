@@ -1,24 +1,30 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
 import heroImage from 'figma:asset/5159f5d6ea0c335cd8bc69a563e78a9a97ff29ee.png';
+import { VideoPlayer } from './VideoPlayer';
+// 导入视频文件 - 请将您的 MP4 视频文件放在 src/assets/ 目录下，然后修改这里的路径
+import videoFile from '../assets/video.mp4';
 
 export function Hero() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
       {/* Animated background */}
       <div className="absolute inset-0">
-        <motion.div 
+        <motion.div
           className="absolute top-1/4 left-1/3 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl"
-          animate={{ 
+          animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
             y: [0, 30, 0]
           }}
           transition={{ duration: 8, repeat: Infinity }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl"
-          animate={{ 
+          animate={{
             scale: [1.2, 1, 1.2],
             x: [0, -50, 0],
             y: [0, -30, 0]
@@ -80,7 +86,7 @@ export function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              Pure electric light commercial vehicles designed for European business needs. 
+              Pure electric light commercial vehicles designed for European business needs.
               Sustainable, efficient, and ready for the future of urban logistics.
             </motion.p>
 
@@ -103,6 +109,7 @@ export function Hero() {
                 className="px-8 py-4 border border-amber-500/50 rounded-full flex items-center gap-2 hover:bg-amber-500/10 transition-all group"
                 whileHover={{ scale: 1.05, borderColor: 'rgba(251, 191, 36, 0.8)' }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setIsVideoOpen(true)}
               >
                 <Play className="w-5 h-5 text-amber-400" />
                 <span>Watch Video</span>
@@ -144,13 +151,13 @@ export function Hero() {
             <div className="relative">
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-amber-500/30 via-yellow-500/20 to-transparent blur-3xl"></div>
-              
+
               <motion.div
                 className="relative"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
-                <img 
+                <img
                   src={heroImage}
                   alt="FLYNT Electric LCV"
                   className="w-full h-auto"
@@ -161,7 +168,7 @@ export function Hero() {
                     WebkitMaskComposite: 'source-in'
                   }}
                 />
-                
+
                 {/* Scan line */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-400/20 to-transparent h-32 pointer-events-none"
@@ -212,6 +219,14 @@ export function Hero() {
           />
         </div>
       </motion.div>
+
+      {/* Video Player Modal */}
+      <VideoPlayer
+        videoSrc={videoFile}
+        isOpen={isVideoOpen}
+        onClose={() => setIsVideoOpen(false)}
+        title="FLYNT Electric LCV - Product Video"
+      />
     </section>
   );
 }

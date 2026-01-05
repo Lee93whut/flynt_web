@@ -21,12 +21,12 @@ export function Vision() {
   ];
 
   return (
-    <section className="py-24 px-4 bg-slate-950 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
-        <motion.div 
+        <motion.div
           className="absolute top-0 right-1/4 w-96 h-96 bg-amber-500 rounded-full blur-3xl"
-          animate={{ 
+          animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0]
           }}
@@ -37,56 +37,56 @@ export function Vision() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Vision Section */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-block px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-6"
+            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-4 sm:mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <span className="text-amber-400 text-sm">Our Purpose</span>
+            <span className="text-amber-400 text-xs sm:text-sm">Our Purpose</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-6xl mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
               Our Vision
             </span>
           </h2>
-          <p className="text-2xl md:text-3xl text-slate-200 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-200 max-w-4xl mx-auto leading-relaxed px-4">
             Creating a safe and sustainable world of autonomous commercial transportation
           </p>
         </motion.div>
 
         {/* Mission Section */}
         <motion.div
-          className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 border border-amber-500/20 rounded-3xl p-8 md:p-16 mb-20 relative overflow-hidden"
+          className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 border border-amber-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-16 mb-12 sm:mb-16 md:mb-20 relative overflow-hidden"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           {/* Grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#fbbf2410_1px,transparent_1px),linear-gradient(to_bottom,#fbbf2410_1px,transparent_1px)] bg-[size:30px_30px]"></div>
-          
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#fbbf2410_1px,transparent_1px),linear-gradient(to_bottom,#fbbf2410_1px,transparent_1px)] bg-[size:20px_20px] sm:bg-[size:30px_30px]"></div>
+
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-2xl flex items-center justify-center">
-                  <Target className="w-8 h-8 text-slate-950" />
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Target className="w-6 h-6 sm:w-8 sm:h-8 text-slate-950" />
                 </div>
-                <h3 className="text-3xl md:text-4xl">Our Mission</h3>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl">Our Mission</h3>
               </div>
-              <p className="text-xl text-slate-300 leading-relaxed">
-                Building efficient electric light commercial vehicles, empowering partners, 
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed">
+                Building efficient electric light commercial vehicles, empowering partners,
                 and driving customer needs forward
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 gap-6">
               {[
                 { label: 'Partner Empowerment', value: 'Collaborative ecosystem' },
@@ -117,27 +117,27 @@ export function Vision() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4">
               <span className="bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
                 Our Core Values
               </span>
             </h3>
-            <p className="text-slate-400 text-lg">
+            <p className="text-slate-400 text-base sm:text-lg">
               The principles that guide everything we do
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 relative overflow-hidden group"
+                className="bg-slate-900/50 border border-slate-800 rounded-xl sm:rounded-2xl p-6 sm:p-8 relative overflow-hidden group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ 
+                whileHover={{
                   y: -5,
                   borderColor: 'rgba(251, 191, 36, 0.3)',
                   boxShadow: '0 10px 30px rgba(251, 191, 36, 0.1)'
@@ -149,15 +149,15 @@ export function Vision() {
                 />
 
                 <motion.div
-                  className="w-16 h-16 bg-gradient-to-br from-amber-500/20 to-yellow-500/20 rounded-xl flex items-center justify-center mb-6 relative"
+                  className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-500/20 to-yellow-500/20 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 relative"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <value.icon className="w-8 h-8 text-amber-400" />
+                  <value.icon className="w-6 h-6 sm:w-8 sm:h-8 text-amber-400" />
                 </motion.div>
 
-                <h4 className="text-xl mb-3 relative">{value.title}</h4>
-                <p className="text-slate-400 relative">{value.desc}</p>
+                <h4 className="text-lg sm:text-xl mb-2 sm:mb-3 relative">{value.title}</h4>
+                <p className="text-sm sm:text-base text-slate-400 relative">{value.desc}</p>
               </motion.div>
             ))}
           </div>

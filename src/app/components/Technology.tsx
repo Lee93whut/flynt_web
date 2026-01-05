@@ -3,18 +3,18 @@ import techImage from 'figma:asset/9fcf293776eabb1adcf38e16ccb86027859c2f9c.png'
 
 export function Technology() {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
       {/* Animated scan lines */}
       <motion.div
         className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"
         animate={{ y: ['0%', '100%'] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
       />
-      
+
       {/* Glowing orbs */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-amber-500/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 left-20 w-64 h-64 bg-yellow-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -24,29 +24,29 @@ export function Technology() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-block px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-6"
+              className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-4 sm:mb-6"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <span className="text-amber-400 text-sm">Technology Excellence</span>
+              <span className="text-amber-400 text-xs sm:text-sm">Technology Excellence</span>
             </motion.div>
 
-            <h2 className="text-4xl md:text-5xl mb-6 bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
               Advanced EV Platform for the Future
             </h2>
-            <p className="text-slate-300 text-lg mb-8">
+            <p className="text-slate-300 text-base sm:text-lg mb-6 sm:mb-8">
               Built from the ground up for electric mobility, with autonomous-ready architecture and maximum efficiency.
             </p>
-            
+
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <motion.div 
+                <motion.div
                   className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
                   whileHover={{ rotate: 180, scale: 1.2 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-2 h-2 bg-slate-950 rounded-full"
                     animate={{ scale: [1, 1.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
@@ -64,12 +64,12 @@ export function Technology() {
               </div>
 
               <div className="flex items-start gap-4">
-                <motion.div 
+                <motion.div
                   className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
                   whileHover={{ rotate: 180, scale: 1.2 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-2 h-2 bg-slate-950 rounded-full"
                     animate={{ scale: [1, 1.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
@@ -87,12 +87,12 @@ export function Technology() {
               </div>
 
               <div className="flex items-start gap-4">
-                <motion.div 
+                <motion.div
                   className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
                   whileHover={{ rotate: 180, scale: 1.2 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-2 h-2 bg-slate-950 rounded-full"
                     animate={{ scale: [1, 1.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
@@ -110,12 +110,12 @@ export function Technology() {
               </div>
 
               <div className="flex items-start gap-4">
-                <motion.div 
+                <motion.div
                   className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"
                   whileHover={{ rotate: 180, scale: 1.2 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-2 h-2 bg-slate-950 rounded-full"
                     animate={{ scale: [1, 1.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: 0.9 }}
@@ -141,7 +141,7 @@ export function Technology() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <motion.div 
+            <motion.div
               className="relative rounded-2xl overflow-hidden border border-amber-500/30"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.4 }}
@@ -152,7 +152,7 @@ export function Technology() {
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-              
+
               {/* Scanning effect */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-400/20 to-transparent h-20"
@@ -160,19 +160,19 @@ export function Technology() {
                 transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
               />
             </motion.div>
-            
+
             {/* Floating tech badges */}
             <motion.div
               className="absolute top-4 right-4 bg-slate-800/80 backdrop-blur-sm border border-amber-500/50 rounded-lg px-4 py-2"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
-              whileHover={{ 
-                scale: 1.1, 
-                boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)' 
+              whileHover={{
+                scale: 1.1,
+                boxShadow: '0 0 20px rgba(251, 191, 36, 0.5)'
               }}
             >
               <div className="flex items-center gap-2">
-                <motion.div 
+                <motion.div
                   className="w-2 h-2 bg-amber-400 rounded-full"
                   animate={{ opacity: [1, 0.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
@@ -185,13 +185,13 @@ export function Technology() {
               className="absolute bottom-4 left-4 bg-slate-800/80 backdrop-blur-sm border border-yellow-500/50 rounded-lg px-4 py-2"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
-              whileHover={{ 
-                scale: 1.1, 
-                boxShadow: '0 0 20px rgba(234, 179, 8, 0.5)' 
+              whileHover={{
+                scale: 1.1,
+                boxShadow: '0 0 20px rgba(234, 179, 8, 0.5)'
               }}
             >
               <div className="flex items-center gap-2">
-                <motion.div 
+                <motion.div
                   className="w-2 h-2 bg-yellow-400 rounded-full"
                   animate={{ opacity: [1, 0.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}

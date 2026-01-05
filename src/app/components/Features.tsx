@@ -30,10 +30,10 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-24 px-4 bg-slate-900 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 relative overflow-hidden">
       {/* Animated background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#fbbf2415_1px,transparent_1px),linear-gradient(to_bottom,#fbbf2415_1px,transparent_1px)] bg-[size:64px_64px]"></div>
-      
+
       {/* Floating particles in background */}
       <div className="absolute inset-0">
         {[...Array(8)].map((_, i) => (
@@ -59,30 +59,30 @@ export function Features() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-block px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-6"
+            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-4 sm:mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <span className="text-amber-400 text-sm">Product Highlights</span>
+            <span className="text-amber-400 text-xs sm:text-sm">Product Highlights</span>
           </motion.div>
-          
-          <h2 className="text-4xl md:text-5xl mb-4 bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
             Designed for Excellence
           </h2>
-          <p className="text-slate-400 text-lg">
+          <p className="text-slate-400 text-base sm:text-lg">
             Every detail engineered for maximum efficiency and value
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -94,9 +94,9 @@ export function Features() {
               whileHover={{ y: -8 }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-yellow-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-              
+
               {/* Animated border */}
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 rounded-2xl"
                 style={{
                   background: 'linear-gradient(45deg, transparent 30%, rgba(251, 191, 36, 0.5) 50%, transparent 70%)',
@@ -111,10 +111,10 @@ export function Features() {
                   repeatType: 'reverse',
                 }}
               />
-              
+
               <div className="relative bg-slate-800/50 backdrop-blur-sm border rounded-2xl p-6"
-                   style={{ borderColor: '#334155' }}>
-                <motion.div 
+                style={{ borderColor: '#334155' }}>
+                <motion.div
                   className="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center mb-4"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
@@ -123,7 +123,7 @@ export function Features() {
                 </motion.div>
                 <h3 className="text-xl mb-2">{feature.title}</h3>
                 <p className="text-slate-400 text-sm mb-4">{feature.description}</p>
-                <motion.div 
+                <motion.div
                   className="text-2xl bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent"
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}

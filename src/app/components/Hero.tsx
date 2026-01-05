@@ -19,7 +19,7 @@ export function Hero() {
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-1/4 left-1/3 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/3 w-48 h-48 md:w-96 md:h-96 bg-amber-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -28,7 +28,7 @@ export function Hero() {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/3 w-48 h-48 md:w-96 md:h-96 bg-yellow-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             x: [0, -50, 0],
@@ -39,9 +39,9 @@ export function Hero() {
       </div>
 
       {/* Grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#fbbf2420_1px,transparent_1px),linear-gradient(to_bottom,#fbbf2420_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#fbbf2420_1px,transparent_1px),linear-gradient(to_bottom,#fbbf2420_1px,transparent_1px)] bg-[size:20px_20px] md:bg-[size:40px_40px] opacity-20"></div>
 
-      <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <motion.div
@@ -86,7 +86,7 @@ export function Hero() {
             </h1>
 
             <motion.p
-              className="text-xl text-slate-300 mb-8 max-w-xl"
+              className="text-base sm:text-lg md:text-xl text-slate-300 mb-6 sm:mb-8 max-w-xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
@@ -96,34 +96,34 @@ export function Hero() {
             </motion.p>
 
             <motion.div
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-3 sm:gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
               <motion.div
-                className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full flex items-center gap-4 hover:shadow-lg hover:shadow-amber-500/50 transition-all group overflow-hidden"
+                className="px-4 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full flex items-center gap-2 sm:gap-3 md:gap-4 hover:shadow-lg hover:shadow-amber-500/50 transition-all group overflow-hidden w-full sm:w-auto"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <button className="flex items-center gap-2">
-                  <span className="font-medium text-slate-950">Explore Our Vehicles</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-slate-950" />
+                <button className="flex items-center gap-1.5 sm:gap-2 flex-1 sm:flex-initial justify-center sm:justify-start">
+                  <span className="font-medium text-slate-950 text-sm sm:text-base">Explore Our Vehicles</span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform text-slate-950 flex-shrink-0" />
                 </button>
-                <div className="h-6 w-px bg-slate-950/30"></div>
+                <div className="h-5 sm:h-6 w-px bg-slate-950/30 hidden sm:block"></div>
                 <button
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-1.5 sm:gap-2 flex-1 sm:flex-initial justify-center sm:justify-start"
                   onClick={() => setIsVideoOpen(true)}
                 >
-                  <Play className="w-5 h-5 text-slate-950" />
-                  <span className="font-medium text-slate-950">Watch Video</span>
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950 flex-shrink-0" />
+                  <span className="font-medium text-slate-950 text-sm sm:text-base">Watch Video</span>
                 </button>
               </motion.div>
             </motion.div>
 
             {/* Key stats */}
             <motion.div
-              className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-slate-800"
+              className="grid grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12 pt-8 sm:pt-12 border-t border-slate-800"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
@@ -138,9 +138,10 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9 + index * 0.1 }}
+                  className="text-center sm:text-left"
                 >
-                  <div className="text-3xl font-bold text-amber-400">{stat.value}</div>
-                  <div className="text-sm text-slate-400 mt-1">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-amber-400">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-slate-400 mt-1">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -184,25 +185,25 @@ export function Hero() {
 
               {/* Floating info cards */}
               <motion.div
-                className="absolute top-1/4 -left-4 bg-slate-900/90 backdrop-blur-sm border border-amber-500/30 rounded-2xl p-4 shadow-xl"
+                className="absolute top-1/4 -left-2 sm:-left-4 bg-slate-900/90 backdrop-blur-sm border border-amber-500/30 rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 shadow-xl"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-amber-400 text-sm mb-1">Zero Emissions</div>
-                <div className="text-2xl font-bold">100% Electric</div>
+                <div className="text-amber-400 text-xs sm:text-sm mb-1">Zero Emissions</div>
+                <div className="text-lg sm:text-xl md:text-2xl font-bold">100% Electric</div>
               </motion.div>
 
               <motion.div
-                className="absolute bottom-1/4 -right-4 bg-slate-900/90 backdrop-blur-sm border border-amber-500/30 rounded-2xl p-4 shadow-xl"
+                className="absolute bottom-1/4 -right-2 sm:-right-4 bg-slate-900/90 backdrop-blur-sm border border-amber-500/30 rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 shadow-xl"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.4 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-amber-400 text-sm mb-1">Cargo Space</div>
-                <div className="text-2xl font-bold">8.1-16.5 m³</div>
+                <div className="text-amber-400 text-xs sm:text-sm mb-1">Cargo Space</div>
+                <div className="text-lg sm:text-xl md:text-2xl font-bold">8.1-16.5 m³</div>
               </motion.div>
             </div>
           </motion.div>

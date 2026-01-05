@@ -3,14 +3,14 @@ import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 
 export function Contact() {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
       {/* Animated grid */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:50px_50px]"
         animate={{ backgroundPosition: ['0px 0px', '50px 50px'] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
       />
-      
+
       {/* Glowing particles */}
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
@@ -33,17 +33,17 @@ export function Contact() {
           />
         ))}
       </div>
-      
+
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-amber-500/10 border border-amber-500/30 rounded-full mb-4 sm:mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -70,7 +70,7 @@ export function Contact() {
           {/* Corner accents */}
           <motion.div
             className="absolute top-0 left-0 w-20 h-20 rounded-tl-3xl"
-            style={{ 
+            style={{
               borderTop: '2px solid rgba(251, 191, 36, 0.3)',
               borderLeft: '2px solid rgba(251, 191, 36, 0.3)'
             }}
@@ -79,14 +79,14 @@ export function Contact() {
           />
           <motion.div
             className="absolute bottom-0 right-0 w-20 h-20 rounded-br-3xl"
-            style={{ 
+            style={{
               borderBottom: '2px solid rgba(234, 179, 8, 0.3)',
               borderRight: '2px solid rgba(234, 179, 8, 0.3)'
             }}
             animate={{ opacity: [0.3, 1, 0.3] }}
             transition={{ duration: 2, repeat: Infinity, delay: 1 }}
           />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 relative">
             {[
               { icon: Mail, label: 'Email', value: 'info@flyntvans.com' },
@@ -94,7 +94,7 @@ export function Contact() {
               { icon: MapPin, label: 'Headquarters', value: 'Silicon Valley, California' },
               { icon: Linkedin, label: 'LinkedIn', value: 'Flynt Automotive' },
             ].map((item, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="flex items-start gap-4 group"
                 initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export function Contact() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ x: 5 }}
               >
-                <motion.div 
+                <motion.div
                   className="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0"
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
@@ -118,7 +118,7 @@ export function Contact() {
             ))}
           </div>
 
-          <motion.div 
+          <motion.div
             className="border-t border-slate-700 pt-8 relative"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

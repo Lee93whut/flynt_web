@@ -3,11 +3,16 @@ import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
 import heroImage from 'figma:asset/5159f5d6ea0c335cd8bc69a563e78a9a97ff29ee.png';
 import { VideoPlayer } from './VideoPlayer';
-// 导入视频文件 - 使用 ?url 后缀让 Vite 正确处理视频文件
-import videoFile from '../assets/video.mp4?url';
 
 export function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  
+  /**
+   * 视频文件路径 - 视频文件放在 public 目录，使用绝对路径
+   * public 目录下的文件会被直接复制到构建输出目录的根目录
+   * 由于设置了 base: '/flynt_web/'，所以路径需要包含 base
+   */
+  const videoFile = '/flynt_web/video.mp4';
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">

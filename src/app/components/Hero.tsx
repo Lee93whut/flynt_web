@@ -203,7 +203,7 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="text-amber-400 text-xs sm:text-sm mb-1">Cargo Space</div>
-                <div className="text-lg sm:text-xl md:text-2xl font-bold">8.1-16.5 m³</div>
+                <div className="text-lg sm:text-xl md:text-2xl font-bold">15-22 m³</div>
               </motion.div>
             </div>
           </motion.div>

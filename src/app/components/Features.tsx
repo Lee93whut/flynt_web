@@ -5,7 +5,7 @@ const features = [
   {
     icon: Box,
     title: 'Maximized Space Efficiency',
-    description: '8.1-16.5 m³ cargo space with 17% better efficiency than competitors',
+    description: '15-22 m³ cargo space with 17% better efficiency than competitors',
     stats: '17% More'
   },
   {

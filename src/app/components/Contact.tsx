@@ -87,63 +87,90 @@ export function Contact() {
             transition={{ duration: 2, repeat: Infinity, delay: 1 }}
           />
 
+          {/* Contact Information Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 relative">
-            {[
-              { icon: Mail, label: 'Email', value: 'info@flyntvans.com', link: 'mailto:info@flyntvans.com' },
-              { icon: MapPin, label: 'Headquarters', value: 'VENTURE HUB, 136 CAPEL STREET, DUBLIN 1, DUBLIN,DO1 T2C9,IRELAND' },
-              { icon: Linkedin, label: 'LinkedIn', link: 'https://www.linkedin.com/company/flyntvans/' },
-              { icon: Instagram, label: 'Instagram', link: 'https://www.instagram.com/flyntvans/' },
-              { icon: Facebook, label: 'Facebook', link: 'https://facebook.com/flyntvans' },
-            ].map((item, index) => (
-              item.link ? (
+            {/* Email */}
+            <motion.a
+              href="mailto:info@flyntvans.com"
+              className="flex items-start gap-4 group cursor-pointer no-underline"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ x: 5 }}
+            >
+              <motion.div
+                className="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <Mail className="w-6 h-6 text-slate-950" />
+              </motion.div>
+              <div className="flex-1">
+                <p className="text-slate-400 text-sm mb-1">Email</p>
+                <p className="text-lg text-white group-hover:text-amber-400 transition-colors">info@flyntvans.com</p>
+              </div>
+            </motion.a>
+
+            {/* Headquarters */}
+            <motion.div
+              className="flex items-start gap-4 group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ x: 5 }}
+            >
+              <motion.div
+                className="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <MapPin className="w-6 h-6 text-slate-950" />
+              </motion.div>
+              <div className="flex-1">
+                <p className="text-slate-400 text-sm mb-1">Headquarters</p>
+                <p className="text-lg text-white group-hover:text-amber-400 transition-colors">
+                  VENTURE HUB, 136 CAPEL STREET, DUBLIN 1, DUBLIN,DO1 T2C9,IRELAND
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Social Media Section */}
+          <motion.div
+            className="pt-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <h3 className="text-center text-xl text-white mb-6 font-semibold">Follow Us on Social Media</h3>
+            <div className="flex justify-center items-center gap-6">
+              {[
+                { icon: Instagram, label: 'Instagram', link: 'https://www.instagram.com/flyntvans/' },
+                { icon: Linkedin, label: 'LinkedIn', link: 'https://www.linkedin.com/company/flyntvans/' },
+                { icon: Facebook, label: 'Facebook', link: 'https://facebook.com/flyntvans' },
+              ].map((social, index) => (
                 <motion.a
                   key={index}
-                  href={item.link}
+                  href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 group cursor-pointer no-underline"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  className="group cursor-pointer no-underline"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -5 }}
                 >
-                  <motion.div
-                    className="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <item.icon className="w-6 h-6 text-slate-950" />
-                  </motion.div>
-                  <div className="flex-1">
-                    <p className="text-lg text-white group-hover:text-amber-400 transition-colors">{item.label}</p>
+                  <div className="w-16 h-16 border-2 border-white rounded-lg flex items-center justify-center bg-transparent group-hover:bg-white/10 transition-colors">
+                    <social.icon className="w-8 h-8 text-white" />
                   </div>
                 </motion.a>
-              ) : (
-                <motion.div
-                  key={index}
-                  className="flex items-start gap-4 group"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ x: 5 }}
-                >
-                  <motion.div
-                    className="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <item.icon className="w-6 h-6 text-slate-950" />
-                  </motion.div>
-                  <div className="flex-1">
-                    <p className="text-slate-400 text-sm mb-1">{item.label}</p>
-                    <p className="text-lg group-hover:text-amber-400 transition-colors">{item.value}</p>
-                  </div>
-                </motion.div>
-              )
-            ))}
-          </div>
+              ))}
+            </div>
+          </motion.div>
 
           <motion.div
             className="border-t border-slate-700 pt-8 relative"

@@ -24,7 +24,7 @@ const features = [
     icon: Gauge,
     title: 'User-Focused Design',
     description: 'Advanced connectivity and ADAS systems for safety and comfort',
-    stats: 'L2+ Ready'
+    stats: 'Automony Ready'
   }
 ];
 

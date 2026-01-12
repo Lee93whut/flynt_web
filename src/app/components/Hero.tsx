@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
-import heroImage from 'figma:asset/5159f5d6ea0c335cd8bc69a563e78a9a97ff29ee.png';
+import heroImage from 'figma:asset/image.png';
 import { VideoPlayer } from './VideoPlayer';
 
 export function Hero() {
@@ -185,25 +185,27 @@ export function Hero() {
 
               {/* Floating info cards */}
               <motion.div
-                className="absolute top-1/4 -left-2 sm:-left-4 bg-slate-900/90 backdrop-blur-sm border border-amber-500/30 rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 shadow-xl"
+                className="absolute left-2 sm:left-3 md:left-4 bg-slate-900/90 backdrop-blur-sm border border-amber-500/30 rounded-lg sm:rounded-xl p-1.5 sm:p-2 md:p-2.5 shadow-xl z-10"
+                style={{ top: 'calc(0.5rem + 0.5cm)' }}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-amber-400 text-xs sm:text-sm mb-1">Zero Emissions</div>
-                <div className="text-lg sm:text-xl md:text-2xl font-bold">100% Electric</div>
+                <div className="text-amber-400 text-[10px] sm:text-xs mb-0.5">Zero Emissions</div>
+                <div className="text-sm sm:text-base md:text-lg font-bold">100% Electric</div>
               </motion.div>
 
               <motion.div
-                className="absolute bottom-1/4 -right-2 sm:-right-4 bg-slate-900/90 backdrop-blur-sm border border-amber-500/30 rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 shadow-xl"
+                className="absolute right-4 sm:right-6 md:right-8 bg-slate-900/90 backdrop-blur-sm border border-amber-500/30 rounded-lg sm:rounded-xl p-1.5 sm:p-2 md:p-2.5 shadow-xl z-10"
+                style={{ bottom: 'calc(1rem + 1cm)' }}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.4 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-amber-400 text-xs sm:text-sm mb-1">Cargo Space</div>
-                <div className="text-lg sm:text-xl md:text-2xl font-bold">15-22 m³</div>
+                <div className="text-amber-400 text-[10px] sm:text-xs mb-0.5">Cargo Space</div>
+                <div className="text-sm sm:text-base md:text-lg font-bold">15-22 m³</div>
               </motion.div>
             </div>
           </motion.div>
